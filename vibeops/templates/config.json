@@ -1,0 +1,22 @@
+{
+  "model_profile": "balanced",
+  "workflow": {
+    "auto_advance": false,
+    "fresh_sessions": true,
+    "parallel_stages": true
+  },
+  "git": {
+    "branching_strategy": "stage",
+    "stage_branch_template": "vp/stage-{stage}-{slug}",
+    "commit_docs": true
+  },
+  "gates": {
+    "confirm_architecture": true,
+    "confirm_stages": true,
+    "confirm_deployment": true
+  },
+  "safety": {
+    "always_confirm_destructive": true
+  },
+  "model_overrides": {}
+}

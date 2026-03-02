@@ -1,0 +1,4 @@
+node_modules/
+hooks/dist/
+*.tgz
+.DS_Store
