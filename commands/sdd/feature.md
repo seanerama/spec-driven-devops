@@ -27,7 +27,7 @@ Produces: sdd-output/feature-assessments/
 Role: feature-manager
 Arguments: $ARGUMENTS
 
-Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role feature-manager`
+Context loaded via: `node "$HOME/.claude/sdd/bin/sdd-tools.cjs" init run-role feature-manager`
 </context>
 
 <process>
@@ -40,5 +40,5 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role fea
    - Recommend: accept (add to current plan), defer (post-v1), or reject (out of scope)
 5. If accepted, create stage instructions for the new feature.
 6. Write assessment to sdd-output/feature-assessments/.
-7. Complete role and auto-continue → check `vp-tools graph next` and immediately invoke the next available role (do NOT just display next steps).
+7. Complete role and auto-continue → check `sdd-tools graph next` and immediately invoke the next available role (do NOT just display next steps).
 </process>

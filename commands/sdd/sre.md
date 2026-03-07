@@ -25,7 +25,7 @@ Produces: recovery-plan.md
 Role: sre
 Arguments: $ARGUMENTS
 
-Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role sre`
+Context loaded via: `node "$HOME/.claude/sdd/bin/sdd-tools.cjs" init run-role sre`
 </context>
 
 <process>
@@ -40,5 +40,5 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role sre
    - Write operational runbooks
 5. Write recovery-plan.md at project root.
 6. Update project-state.md with SRE setup info.
-7. Complete role and auto-continue → check `vp-tools graph next` and immediately invoke the next available role, or announce "Workflow complete!" if no roles remain.
+7. Complete role and auto-continue → check `sdd-tools graph next` and immediately invoke the next available role, or announce "Workflow complete!" if no roles remain.
 </process>

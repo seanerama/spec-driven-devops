@@ -26,7 +26,7 @@ Produces: codebase-map.html
 Role: codebase-mapper
 Arguments: $ARGUMENTS
 
-Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role codebase-mapper`
+Context loaded via: `node "$HOME/.claude/sdd/bin/sdd-tools.cjs" init run-role codebase-mapper`
 </context>
 
 <process>

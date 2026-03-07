@@ -4,7 +4,7 @@ Logic for /sdd:next — determining what to do next in the workflow.
 
 ## Resolution Logic
 
-1. Load graph status via `vp-tools init next`
+1. Load graph status via `sdd-tools init next`
 2. Display results grouped by actionability:
 
 ### Priority Order

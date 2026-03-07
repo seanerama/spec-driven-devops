@@ -27,13 +27,13 @@ Produces: sdd-output/project-plan.md and sdd-output/deploy-instruct.md
 Role: lead-architect
 Arguments: $ARGUMENTS
 
-Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role lead-architect`
+Context loaded via: `node "$HOME/.claude/sdd/bin/sdd-tools.cjs" init run-role lead-architect`
 </context>
 
 <process>
 1. Load context:
    ```bash
-   node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role lead-architect
+   node "$HOME/.claude/sdd/bin/sdd-tools.cjs" init run-role lead-architect
    ```
    Validates Vision Assistant dependency (optional — can skip with confirmation).
 
@@ -41,7 +41,7 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role lea
 
 3. Mark role active:
    ```bash
-   node "$HOME/.claude/sdd/bin/vp-tools.cjs" state start-role lead-architect
+   node "$HOME/.claude/sdd/bin/sdd-tools.cjs" state start-role lead-architect
    ```
 
 4. Load vision-document.md if available.
@@ -64,9 +64,9 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role lea
 
 7. Complete role:
    ```bash
-   node "$HOME/.claude/sdd/bin/vp-tools.cjs" state complete-role lead-architect --output sdd-output/project-plan.md --output sdd-output/deploy-instruct.md
+   node "$HOME/.claude/sdd/bin/sdd-tools.cjs" state complete-role lead-architect --output sdd-output/project-plan.md --output sdd-output/deploy-instruct.md
    ```
 
-8. Auto-continue — check `vp-tools graph next` and immediately invoke the next role.
+8. Auto-continue — check `sdd-tools graph next` and immediately invoke the next role.
    Do NOT just display the next steps — invoke the next command (typically `/sdd:plan`) directly.
 </process>

@@ -78,7 +78,7 @@ function stateReplaceField(content, fieldName, newValue) {
 function buildStateFrontmatter(bodyContent, cwd) {
   const ef = (f) => stateExtractField(bodyContent, f);
 
-  const fm = { vp_state_version: '1.0' };
+  const fm = { sdd_state_version: '1.0' };
 
   const workflowPath = ef('Path');
   if (workflowPath) fm.workflow_path = workflowPath.toLowerCase();
@@ -152,7 +152,7 @@ function getStatePath(cwd) {
 function cmdStateLoad(cwd, raw) {
   const { loadConfig } = require('./config.cjs');
   const config = loadConfig(cwd);
-  const vpDir = path.join(cwd, 'sdd-output');
+  const sddDir = path.join(cwd, 'sdd-output');
 
   let stateRaw = '';
   try {
@@ -160,7 +160,7 @@ function cmdStateLoad(cwd, raw) {
   } catch {}
 
   const stateExists = stateRaw.length > 0;
-  const configExists = fs.existsSync(path.join(vpDir, 'config.json'));
+  const configExists = fs.existsSync(path.join(sddDir, 'config.json'));
 
   const result = { config, state_raw: stateRaw, state_exists: stateExists, config_exists: configExists };
 

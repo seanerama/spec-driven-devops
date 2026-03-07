@@ -26,7 +26,7 @@ Produces: sdd-output/stage-instructions/ and sdd-output/contracts/
 Role: project-planner
 Arguments: $ARGUMENTS
 
-Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role project-planner`
+Context loaded via: `node "$HOME/.claude/sdd/bin/sdd-tools.cjs" init run-role project-planner`
 </context>
 
 <process>

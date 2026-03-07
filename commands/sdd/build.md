@@ -29,13 +29,13 @@ Produces: source code, tests, updated project-state.md
 <context>
 Stage: $ARGUMENTS
 
-Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init build $ARGUMENTS`
+Context loaded via: `node "$HOME/.claude/sdd/bin/sdd-tools.cjs" init build $ARGUMENTS`
 </context>
 
 <process>
 1. Load build context:
    ```bash
-   node "$HOME/.claude/sdd/bin/vp-tools.cjs" init build $ARGUMENTS
+   node "$HOME/.claude/sdd/bin/sdd-tools.cjs" init build $ARGUMENTS
    ```
    Returns available stages, dependencies, model config.
 
@@ -47,7 +47,7 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init build $ARGUM
    a. Read the stage instruction file
    b. Create git branch (if branching strategy = stage):
       ```bash
-      git checkout -b vp/stage-{N}-{slug}
+      git checkout -b sdd/stage-{N}-{slug}
       ```
    c. Implement according to stage instructions:
       - Build files, components, endpoints as specified
@@ -61,7 +61,7 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init build $ARGUM
    - Auto-invoke `/sdd:test` immediately (do NOT just notify the user)
 
 6. Complete and auto-continue:
-   - Check `vp-tools graph next` for available roles
+   - Check `sdd-tools graph next` for available roles
    - If testing is needed → immediately invoke `/sdd:test`
    - Otherwise → immediately invoke the next available role
    - Do NOT just display next steps — invoke the next command directly

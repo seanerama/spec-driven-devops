@@ -34,7 +34,7 @@ Usage:
 <context>
 Arguments: $ARGUMENTS
 
-Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init start`
+Context loaded via: `node "$HOME/.claude/sdd/bin/sdd-tools.cjs" init start`
 </context>
 
 <process>
@@ -47,7 +47,7 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init start`
 
 2. **Load context**:
    ```bash
-   node "$HOME/.claude/sdd/bin/vp-tools.cjs" init start
+   node "$HOME/.claude/sdd/bin/sdd-tools.cjs" init start
    ```
 
 3. **If STATE.md exists**:
@@ -67,7 +67,7 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init start`
    a. Determine the workflow sequence for the chosen path (new or existing)
    b. Mark all roles BEFORE the target role as complete (skipped) in STATE.md:
       ```bash
-      node "$HOME/.claude/sdd/bin/vp-tools.cjs" state complete-role <role-id> --output skipped
+      node "$HOME/.claude/sdd/bin/sdd-tools.cjs" state complete-role <role-id> --output skipped
       ```
    c. Check if the user has existing documents that predecessor roles would have produced:
       - If predecessor outputs exist (e.g., sdd-output/vision-document.md, project-plan.md),

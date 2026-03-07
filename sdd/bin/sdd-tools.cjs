@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 /**
- * vp-tools — CLI dispatcher for spec-driven-devops
+ * sdd-tools — CLI dispatcher for spec-driven-devops
  *
- * Usage: node vp-tools.cjs <command> [subcommand] [args...] [--raw] [--cwd <path>]
+ * Usage: node sdd-tools.cjs <command> [subcommand] [args...] [--raw] [--cwd <path>]
  *
  * Commands:
  *   state load                         Load config + state summary
@@ -69,7 +69,7 @@ const subcommand = cleanArgs[1];
 // ─── Dispatch ────────────────────────────────────────────────────────────────
 
 if (!command) {
-  error('Usage: vp-tools <command> [subcommand] [args...]\nRun with --help for details.');
+  error('Usage: sdd-tools <command> [subcommand] [args...]\nRun with --help for details.');
 }
 
 switch (command) {

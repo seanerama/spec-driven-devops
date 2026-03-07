@@ -233,7 +233,7 @@ Three-tier config resolution (each layer overrides the previous):
   "git": {
     "branching": "stage",
     "auto_commit": true,
-    "commit_prefix": "vp:"
+    "commit_prefix": "sdd:"
   },
   "gates": {
     "require_tests": true,
@@ -291,12 +291,12 @@ spec-driven-devops/
 │       └── ...
 ├── hooks/
 │   └── src/
-│       ├── vp-statusline.js    # Progress bar in status line
-│       ├── vp-context-monitor.js   # Context window warnings
-│       └── vp-session-start.js # Auto-detect VP projects
+│       ├── sdd-statusline.js    # Progress bar in status line
+│       ├── sdd-context-monitor.js   # Context window warnings
+│       └── sdd-session-start.js # Auto-detect SDD projects
 ├── sdd/                        # Internals (copied to runtime config dir)
 │   ├── bin/
-│   │   ├── vp-tools.cjs       # CLI dispatcher
+│   │   ├── sdd-tools.cjs       # CLI dispatcher
 │   │   └── lib/
 │   │       ├── core.cjs        # Model profiles, output helpers
 │   │       ├── roles.cjs       # 16 role definitions
@@ -317,28 +317,28 @@ spec-driven-devops/
 
 ## CLI Tools
 
-The `vp-tools.cjs` dispatcher provides programmatic access for commands and hooks:
+The `sdd-tools.cjs` dispatcher provides programmatic access for commands and hooks:
 
 ```bash
 # State management
-vp-tools state load               # Load STATE.md
-vp-tools state get <field>        # Get a field value
-vp-tools state update <field> <value>
-vp-tools state complete-role <id> --output <path>
+sdd-tools state load               # Load STATE.md
+sdd-tools state get <field>        # Get a field value
+sdd-tools state update <field> <value>
+sdd-tools state complete-role <id> --output <path>
 
 # Dependency graph
-vp-tools graph status             # Full graph visualization
-vp-tools graph next               # Available next roles
-vp-tools graph can-run <role-id>  # Check if a role can run
+sdd-tools graph status             # Full graph visualization
+sdd-tools graph next               # Available next roles
+sdd-tools graph can-run <role-id>  # Check if a role can run
 
 # Configuration
-vp-tools config get <key>         # Dot notation: model_profile, git.branching
-vp-tools config set <key> <value>
+sdd-tools config get <key>         # Dot notation: model_profile, git.branching
+sdd-tools config set <key> <value>
 
 # Initialization
-vp-tools init start               # Check for existing project
-vp-tools init run-role <role-id>  # Validate deps, load context
-vp-tools init build [stage-num]   # Load stage build context
+sdd-tools init start               # Check for existing project
+sdd-tools init run-role <role-id>  # Validate deps, load context
+sdd-tools init build [stage-num]   # Load stage build context
 ```
 
 ## Testing

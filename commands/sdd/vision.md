@@ -26,18 +26,18 @@ Produces: sdd-output/vision-document.md
 Role: vision-assistant
 Arguments: $ARGUMENTS
 
-Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role vision-assistant`
+Context loaded via: `node "$HOME/.claude/sdd/bin/sdd-tools.cjs" init run-role vision-assistant`
 </context>
 
 <process>
 1. Load context:
    ```bash
-   node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role vision-assistant
+   node "$HOME/.claude/sdd/bin/sdd-tools.cjs" init run-role vision-assistant
    ```
 
 2. Mark role active:
    ```bash
-   node "$HOME/.claude/sdd/bin/vp-tools.cjs" state start-role vision-assistant
+   node "$HOME/.claude/sdd/bin/sdd-tools.cjs" state start-role vision-assistant
    ```
 
 3. Execute Vision Assistant workflow:
@@ -69,9 +69,9 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role vis
 
 5. Complete role:
    ```bash
-   node "$HOME/.claude/sdd/bin/vp-tools.cjs" state complete-role vision-assistant --output sdd-output/vision-document.md
+   node "$HOME/.claude/sdd/bin/sdd-tools.cjs" state complete-role vision-assistant --output sdd-output/vision-document.md
    ```
 
-6. Auto-continue — check `vp-tools graph next` and immediately invoke the next role.
+6. Auto-continue — check `sdd-tools graph next` and immediately invoke the next role.
    Do NOT just display the next steps — invoke `/sdd:architect` (or the appropriate next command) directly.
 </process>

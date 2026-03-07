@@ -11,13 +11,13 @@ availability status for each.
 </objective>
 
 <context>
-Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" role list`
+Context loaded via: `node "$HOME/.claude/sdd/bin/sdd-tools.cjs" role list`
 </context>
 
 <process>
 1. Load role list:
    ```bash
-   node "$HOME/.claude/sdd/bin/vp-tools.cjs" role list
+   node "$HOME/.claude/sdd/bin/sdd-tools.cjs" role list
    ```
 
 2. Display formatted help:

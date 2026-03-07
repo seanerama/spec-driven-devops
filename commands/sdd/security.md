@@ -25,7 +25,7 @@ Produces: sdd-output/security-report.md
 Role: security-auditor
 Arguments: $ARGUMENTS
 
-Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role security-auditor`
+Context loaded via: `node "$HOME/.claude/sdd/bin/sdd-tools.cjs" init run-role security-auditor`
 </context>
 
 <process>
@@ -40,5 +40,5 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role sec
    - Review error handling (no sensitive data in errors)
    - Check CORS, CSP, and security headers
 4. Write sdd-output/security-report.md with findings and recommendations.
-5. Complete role and auto-continue → check `vp-tools graph next` and immediately invoke the next available role (do NOT just display next steps).
+5. Complete role and auto-continue → check `sdd-tools graph next` and immediately invoke the next available role (do NOT just display next steps).
 </process>

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * vp-statusline — Statusline hook for Claude Code
+ * sdd-statusline — Statusline hook for Claude Code
  *
  * Displays current SDD role and progress in the status bar.
  * Reads STATE.md frontmatter for current role/phase info.
@@ -22,7 +22,7 @@ process.stdin.on('end', () => {
     const statePath = path.join(cwd, 'sdd-output', 'STATE.md');
 
     if (!fs.existsSync(statePath)) {
-      // No VP project — output empty
+      // No SDD project — output empty
       process.stdout.write(JSON.stringify({}));
       return;
     }
@@ -56,7 +56,7 @@ process.stdin.on('end', () => {
     const bar = '\u2588'.repeat(filled) + '\u2591'.repeat(barWidth - filled);
 
     // Build status line
-    const parts = ['VP'];
+    const parts = ['SDD'];
     if (activeRole) {
       parts.push(activeRole);
     } else {
@@ -66,13 +66,13 @@ process.stdin.on('end', () => {
     const statusLine = parts.join(': ') + ` ${bar} ${percent}%`;
 
     // Write context metrics to bridge file for context monitor
-    const bridgePath = path.join(os.tmpdir(), 'vp-context-bridge.json');
+    const bridgePath = path.join(os.tmpdir(), 'sdd-context-bridge.json');
     const contextData = {
       ...data,
-      vp_phase: phase,
-      vp_status: status,
-      vp_active_role: activeRole,
-      vp_progress: percent,
+      sdd_phase: phase,
+      sdd_status: status,
+      sdd_active_role: activeRole,
+      sdd_progress: percent,
       timestamp: new Date().toISOString(),
     };
     fs.writeFileSync(bridgePath, JSON.stringify(contextData), 'utf-8');

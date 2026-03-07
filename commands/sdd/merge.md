@@ -24,7 +24,7 @@ stage branches. Event-triggered when parallel Stage Managers create conflicts.
 Role: merge-manager
 Arguments: $ARGUMENTS
 
-Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role merge-manager`
+Context loaded via: `node "$HOME/.claude/sdd/bin/sdd-tools.cjs" init run-role merge-manager`
 </context>
 
 <process>
@@ -37,5 +37,5 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role mer
    - Merge intelligently, preserving both changes
    - Run tests to verify merged code works
 5. Document resolution in merge report.
-6. Complete role and auto-continue → check `vp-tools graph next` and immediately invoke the next available role (do NOT just display next steps).
+6. Complete role and auto-continue → check `sdd-tools graph next` and immediately invoke the next available role (do NOT just display next steps).
 </process>

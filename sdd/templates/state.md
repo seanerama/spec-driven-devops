@@ -1,5 +1,5 @@
 ---
-vp_state_version: "1.0"
+sdd_state_version: "1.0"
 workflow_path: "{{WORKFLOW_PATH}}"
 current_phase: "design"
 status: "not_started"

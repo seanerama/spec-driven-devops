@@ -27,7 +27,7 @@ Produces: sdd-output/project-plan.md and sdd-output/project-state.md
 Role: retrofit-planner
 Arguments: $ARGUMENTS
 
-Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role retrofit-planner`
+Context loaded via: `node "$HOME/.claude/sdd/bin/sdd-tools.cjs" init run-role retrofit-planner`
 </context>
 
 <process>

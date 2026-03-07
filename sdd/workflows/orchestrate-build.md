@@ -19,7 +19,7 @@ When `/sdd:build <stage-number>` is called:
 
 5. Create git branch:
    ```bash
-   git checkout -b vp/stage-{N}-{slug}
+   git checkout -b sdd/stage-{N}-{slug}
    ```
 
 6. Implement the stage:
@@ -42,7 +42,7 @@ When `/sdd:build <stage-number>` is called:
 10. Merge to main:
     ```bash
     git checkout main
-    git merge vp/stage-{N}-{slug}
+    git merge sdd/stage-{N}-{slug}
     ```
 
 ## Multi-Stage Execution

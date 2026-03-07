@@ -4,7 +4,7 @@ Generic wrapper for executing any SDD role. All role commands reference this wor
 
 ## Pre-Execution
 
-1. **Load context** via `vp-tools init run-role <role-id>`
+1. **Load context** via `sdd-tools init run-role <role-id>`
    - Returns: `can_run`, `missing_deps`, `model`, `existing_outputs`, `workflow_path`
 
 2. **Dependency check**:
@@ -12,7 +12,7 @@ Generic wrapper for executing any SDD role. All role commands reference this wor
    - If `needs_confirm: true` → Tell user an optional dependency was skipped, confirm to proceed
    - If `already_complete: true` → This is a re-invocation. Load previous outputs for context
 
-3. **Mark role active**: `vp-tools state start-role <role-id>`
+3. **Mark role active**: `sdd-tools state start-role <role-id>`
 
 ## Execution
 
@@ -31,12 +31,12 @@ Generic wrapper for executing any SDD role. All role commands reference this wor
 
 ## Post-Execution
 
-7. **Complete role**: `vp-tools state complete-role <role-id> --output <path> [--output <path>...]`
+7. **Complete role**: `sdd-tools state complete-role <role-id> --output <path> [--output <path>...]`
    - Marks checklist item as [x] in STATE.md
    - Records outputs in the Outputs Produced table
    - Removes from Active Roles section
 
-8. **Check next steps**: `vp-tools graph next`
+8. **Check next steps**: `sdd-tools graph next`
    - Parse the output to determine available next roles
 
 9. **Auto-continue the workflow**:
@@ -48,6 +48,6 @@ Generic wrapper for executing any SDD role. All role commands reference this wor
 ## Error Handling
 
 - If the role cannot complete (blocked, needs user decision):
-  - Record session state: `vp-tools state record-session --stopped-at "description"`
+  - Record session state: `sdd-tools state record-session --stopped-at "description"`
   - Do NOT mark the role as complete
   - Inform user what's needed to continue

@@ -255,8 +255,8 @@ function convertForCodex(content, configDir) {
   let converted = buildFrontmatter(fm) + '\n' + body;
   converted = converted.replace(/~\/\.claude\//g, configDir.replace(os.homedir(), '~/') + '/');
   converted = converted.replace(/\/sdd:/g, '/sdd-');
-  // $ARGUMENTS → {{VP_ARGS}}
-  converted = converted.replace(/\$ARGUMENTS/g, '{{VP_ARGS}}');
+  // $ARGUMENTS → {{SDD_ARGS}}
+  converted = converted.replace(/\$ARGUMENTS/g, '{{SDD_ARGS}}');
 
   return converted;
 }
@@ -377,14 +377,14 @@ function installForRuntime(runtime) {
     const hooksDistDir = path.join(__dirname, '..', 'hooks', 'dist');
     const hooksSrcDir = path.join(__dirname, '..', 'hooks', 'src');
     // Use dist if it has actual hook files, otherwise fall back to src
-    const distHasHooks = fs.existsSync(hooksDistDir) && fs.readdirSync(hooksDistDir).some(f => f.startsWith('vp-'));
+    const distHasHooks = fs.existsSync(hooksDistDir) && fs.readdirSync(hooksDistDir).some(f => f.startsWith('sdd-'));
     const hooksSource = distHasHooks ? hooksDistDir : hooksSrcDir;
 
     if (fs.existsSync(hooksSource)) {
       const destHooks = path.join(configDir, 'hooks');
       fs.mkdirSync(destHooks, { recursive: true });
 
-      const hookFiles = fs.readdirSync(hooksSource).filter(f => f.startsWith('vp-'));
+      const hookFiles = fs.readdirSync(hooksSource).filter(f => f.startsWith('sdd-'));
       for (const file of hookFiles) {
         fs.copyFileSync(path.join(hooksSource, file), path.join(destHooks, file));
       }
@@ -400,8 +400,8 @@ function installForRuntime(runtime) {
       for (const event of ['PostToolUse', 'SessionStart']) {
         if (Array.isArray(settings.hooks[event])) {
           settings.hooks[event] = settings.hooks[event].filter(h =>
-            !(h.command && h.command.includes('vp-')) && // old flat format
-            !(h.hooks && h.hooks.some(hh => hh.command && hh.command.includes('vp-'))) // old matcher format
+            !(h.command && h.command.includes('sdd-')) && // old flat format
+            !(h.hooks && h.hooks.some(hh => hh.command && hh.command.includes('sdd-'))) // old matcher format
           );
           if (settings.hooks[event].length === 0) delete settings.hooks[event];
         }
@@ -412,12 +412,12 @@ function installForRuntime(runtime) {
         {
           event: 'PostToolUse',
           matcher: '',
-          file: 'vp-context-monitor.js',
+          file: 'sdd-context-monitor.js',
         },
         {
           event: 'SessionStart',
           matcher: '',
-          file: 'vp-session-start.js',
+          file: 'sdd-session-start.js',
         },
       ];
 
@@ -434,7 +434,7 @@ function installForRuntime(runtime) {
       // Statusline is a top-level setting, not a hook event
       settings.statusLine = {
         type: 'command',
-        command: buildHookCommand(configDir, 'vp-statusline.js'),
+        command: buildHookCommand(configDir, 'sdd-statusline.js'),
       };
 
       writeSettings(settingsPath, settings);
@@ -480,9 +480,9 @@ function uninstallForRuntime(runtime) {
         }
         settings.hooks[event] = settings.hooks[event].filter(h => {
           // Remove old flat format
-          if (h.command && h.command.includes('vp-')) return false;
+          if (h.command && h.command.includes('sdd-')) return false;
           // Remove new matcher format
-          if (h.hooks && h.hooks.some(hh => hh.command && hh.command.includes('vp-'))) return false;
+          if (h.hooks && h.hooks.some(hh => hh.command && hh.command.includes('sdd-'))) return false;
           return true;
         });
         if (settings.hooks[event].length === 0) delete settings.hooks[event];
@@ -490,7 +490,7 @@ function uninstallForRuntime(runtime) {
       if (Object.keys(settings.hooks).length === 0) delete settings.hooks;
     }
     // Remove statusLine if it's ours
-    if (settings.statusLine && settings.statusLine.command && settings.statusLine.command.includes('vp-')) {
+    if (settings.statusLine && settings.statusLine.command && settings.statusLine.command.includes('sdd-')) {
       delete settings.statusLine;
     }
     writeSettings(settingsPath, settings);
@@ -498,7 +498,7 @@ function uninstallForRuntime(runtime) {
     // Remove hook files
     const hooksDir = path.join(configDir, 'hooks');
     if (fs.existsSync(hooksDir)) {
-      const hookFiles = fs.readdirSync(hooksDir).filter(f => f.startsWith('vp-'));
+      const hookFiles = fs.readdirSync(hooksDir).filter(f => f.startsWith('sdd-'));
       for (const file of hookFiles) {
         fs.unlinkSync(path.join(hooksDir, file));
       }

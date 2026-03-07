@@ -30,7 +30,7 @@ function resolveProjectRoot(startDir) {
 /**
  * Get the sdd-output directory path for a given project root.
  */
-function getVpDir(projectRoot) {
+function getSddDir(projectRoot) {
   return path.join(projectRoot, 'sdd-output');
 }
 
@@ -52,8 +52,8 @@ const MODEL_PROFILES = {
   'codebase-mapper':     { quality: 'sonnet', balanced: 'haiku', budget: 'haiku' },
   'project-deployer':    { quality: 'sonnet', balanced: 'sonnet', budget: 'sonnet' },
   'sre':                 { quality: 'opus', balanced: 'sonnet', budget: 'haiku' },
-  'vp-verifier':         { quality: 'sonnet', balanced: 'sonnet', budget: 'haiku' },
-  'vp-stage-executor':   { quality: 'opus', balanced: 'sonnet', budget: 'sonnet' },
+  'sdd-verifier':         { quality: 'sonnet', balanced: 'sonnet', budget: 'haiku' },
+  'sdd-stage-executor':   { quality: 'opus', balanced: 'sonnet', budget: 'sonnet' },
 };
 
 // ─── Output helpers ──────────────────────────────────────────────────────────
@@ -64,7 +64,7 @@ function output(result, raw, rawValue) {
   } else {
     const json = JSON.stringify(result, null, 2);
     if (json.length > 50000) {
-      const tmpPath = path.join(os.tmpdir(), `vp-${Date.now()}.json`);
+      const tmpPath = path.join(os.tmpdir(), `sdd-${Date.now()}.json`);
       fs.writeFileSync(tmpPath, json, 'utf-8');
       process.stdout.write('@file:' + tmpPath);
     } else {
@@ -156,7 +156,7 @@ module.exports = {
   MODEL_PROFILES,
   toPosixPath,
   resolveProjectRoot,
-  getVpDir,
+  getSddDir,
   output,
   error,
   safeReadFile,

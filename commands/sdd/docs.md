@@ -26,7 +26,7 @@ Produces: README.md, docs/ directory
 Role: technical-writer
 Arguments: $ARGUMENTS
 
-Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role technical-writer`
+Context loaded via: `node "$HOME/.claude/sdd/bin/sdd-tools.cjs" init run-role technical-writer`
 </context>
 
 <process>
@@ -40,5 +40,5 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role tec
    - No framework leakage — don't mention SDD or internal roles
    - User-first writing: show don't tell, code examples, progressive disclosure
 5. Write documentation files.
-6. Complete role and auto-continue → check `vp-tools graph next` and immediately invoke the next available role (do NOT just display next steps).
+6. Complete role and auto-continue → check `sdd-tools graph next` and immediately invoke the next available role (do NOT just display next steps).
 </process>

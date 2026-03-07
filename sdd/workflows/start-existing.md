@@ -23,7 +23,7 @@ Initializes sdd-output/ for an existing project that needs changes.
 
 3. **Initialize config.json**:
    ```bash
-   node "$HOME/.claude/sdd/bin/vp-tools.cjs" config ensure
+   node "$HOME/.claude/sdd/bin/sdd-tools.cjs" config ensure
    ```
 
 4. **Update .gitignore**:

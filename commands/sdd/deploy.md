@@ -24,7 +24,7 @@ from deploy-instruct.md. May use MCP tools for cloud platforms.
 Role: project-deployer
 Arguments: $ARGUMENTS
 
-Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role project-deployer`
+Context loaded via: `node "$HOME/.claude/sdd/bin/sdd-tools.cjs" init run-role project-deployer`
 </context>
 
 <process>

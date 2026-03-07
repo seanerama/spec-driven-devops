@@ -26,7 +26,7 @@ Produces: sdd-output/design-system.md
 Role: ui-ux-designer
 Arguments: $ARGUMENTS
 
-Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role ui-ux-designer`
+Context loaded via: `node "$HOME/.claude/sdd/bin/sdd-tools.cjs" init run-role ui-ux-designer`
 </context>
 
 <process>
@@ -42,5 +42,5 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role ui-
    - Define animation and transition patterns
    - Document the design system
 5. Write sdd-output/design-system.md.
-6. Complete role and auto-continue → check `vp-tools graph next` and immediately invoke the next available role (do NOT just display next steps).
+6. Complete role and auto-continue → check `sdd-tools graph next` and immediately invoke the next available role (do NOT just display next steps).
 </process>

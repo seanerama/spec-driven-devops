@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 /**
- * vp-session-start — SessionStart hook for Claude Code
+ * sdd-session-start — SessionStart hook for Claude Code
  *
  * Checks for spec-driven-devops updates (cached, once per day) and displays
- * VP state summary if STATE.md exists in the current project.
+ * SDD state summary if STATE.md exists in the current project.
  */
 
 const fs = require('fs');
@@ -20,7 +20,7 @@ process.stdin.on('end', () => {
     const cwd = data.cwd || process.cwd();
     const messages = [];
 
-    // Check if VP project exists in current directory
+    // Check if SDD project exists in current directory
     const statePath = path.join(cwd, 'sdd-output', 'STATE.md');
     if (fs.existsSync(statePath)) {
       const content = fs.readFileSync(statePath, 'utf-8');
@@ -31,12 +31,12 @@ process.stdin.on('end', () => {
         return match ? match[1].trim() : null;
       };
 
-      const vpPath = extractField('Path') || 'Unknown';
+      const sddPath = extractField('Path') || 'Unknown';
       const phase = extractField('Current Phase') || 'Unknown';
       const status = extractField('Status') || 'Unknown';
       const stoppedAt = extractField('Stopped At');
 
-      messages.push(`SDD project detected (${vpPath})`);
+      messages.push(`SDD project detected (${sddPath})`);
       messages.push(`  Phase: ${phase} | Status: ${status}`);
       if (stoppedAt && stoppedAt !== 'Initial setup') {
         messages.push(`  Last stopped at: ${stoppedAt}`);
@@ -45,7 +45,7 @@ process.stdin.on('end', () => {
     }
 
     // Version check (cached, once per day)
-    const cachePath = path.join(os.tmpdir(), 'vp-version-check.json');
+    const cachePath = path.join(os.tmpdir(), 'sdd-version-check.json');
     let shouldCheck = true;
     try {
       if (fs.existsSync(cachePath)) {

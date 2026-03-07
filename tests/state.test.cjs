@@ -59,7 +59,7 @@ assert(notFound === null, 'stateReplaceField returns null for missing field');
 // ─── Frontmatter Extraction ─────────────────────────────────────────────────
 
 const withFm = `---
-vp_state_version: "1.0"
+sdd_state_version: "1.0"
 workflow_path: "new"
 status: "in_progress"
 ---
@@ -68,7 +68,7 @@ status: "in_progress"
 `;
 
 const fm = extractFrontmatter(withFm);
-assertEqual(fm.vp_state_version, '1.0', 'Extract frontmatter string value');
+assertEqual(fm.sdd_state_version, '1.0', 'Extract frontmatter string value');
 assertEqual(fm.workflow_path, 'new', 'Extract frontmatter workflow_path');
 assertEqual(fm.status, 'in_progress', 'Extract frontmatter status');
 
@@ -89,7 +89,7 @@ assertEqual(noFmStripped, '# No frontmatter', 'stripFrontmatter is no-op without
 const bodyContent = sampleState;
 const builtFm = buildStateFrontmatter(bodyContent, null);
 
-assertEqual(builtFm.vp_state_version, '1.0', 'Built FM has version');
+assertEqual(builtFm.sdd_state_version, '1.0', 'Built FM has version');
 assertEqual(builtFm.workflow_path, 'new project', 'Built FM has workflow path (lowercased)');
 assert(builtFm.last_updated !== undefined, 'Built FM has last_updated');
 assert(builtFm.progress !== undefined, 'Built FM has progress');

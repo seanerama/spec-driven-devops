@@ -7,7 +7,7 @@
   },
   "git": {
     "branching_strategy": "stage",
-    "stage_branch_template": "vp/stage-{stage}-{slug}",
+    "stage_branch_template": "sdd/stage-{stage}-{slug}",
     "commit_docs": true
   },
   "gates": {

@@ -20,7 +20,7 @@ const HARDCODED_DEFAULTS = {
   },
   git: {
     branching_strategy: 'stage',
-    stage_branch_template: 'vp/stage-{stage}-{slug}',
+    stage_branch_template: 'sdd/stage-{stage}-{slug}',
     commit_docs: true,
   },
   gates: {
@@ -130,12 +130,12 @@ function configSet(obj, keyPath, value) {
 
 function cmdConfigEnsure(cwd, raw) {
   const configPath = getProjectConfigPath(cwd);
-  const vpDir = path.join(cwd, 'sdd-output');
+  const sddDir = path.join(cwd, 'sdd-output');
 
   // Ensure sdd-output directory exists
   try {
-    if (!fs.existsSync(vpDir)) {
-      fs.mkdirSync(vpDir, { recursive: true });
+    if (!fs.existsSync(sddDir)) {
+      fs.mkdirSync(sddDir, { recursive: true });
     }
   } catch (err) {
     error('Failed to create sdd-output directory: ' + err.message);

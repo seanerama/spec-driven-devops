@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * vp-context-monitor — PostToolUse hook for Claude Code
+ * sdd-context-monitor — PostToolUse hook for Claude Code
  *
  * Monitors context window usage and warns when running low.
  * Reads metrics from the statusline bridge file.
@@ -19,7 +19,7 @@ process.stdin.on('end', () => {
     const data = JSON.parse(input);
 
     // Read context metrics from bridge file
-    const bridgePath = path.join(os.tmpdir(), 'vp-context-bridge.json');
+    const bridgePath = path.join(os.tmpdir(), 'sdd-context-bridge.json');
     let bridge = {};
     try {
       if (fs.existsSync(bridgePath)) {
@@ -41,7 +41,7 @@ process.stdin.on('end', () => {
         'STOP current work. Save your progress:',
         '',
         'If using SDD, run:',
-        '  node "$HOME/.claude/sdd/bin/vp-tools.cjs" state record-session --stopped-at "description of where you stopped"',
+        '  node "$HOME/.claude/sdd/bin/sdd-tools.cjs" state record-session --stopped-at "description of where you stopped"',
         '',
         'Then start a fresh session and run /sdd:next to continue.',
       ].join('\n');

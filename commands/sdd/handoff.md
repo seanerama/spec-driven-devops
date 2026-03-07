@@ -27,7 +27,7 @@ Produces: sdd-output/ux-feedback/ documentation
 Role: handoff-tester
 Arguments: $ARGUMENTS
 
-Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role handoff-tester`
+Context loaded via: `node "$HOME/.claude/sdd/bin/sdd-tools.cjs" init run-role handoff-tester`
 </context>
 
 <process>
@@ -42,5 +42,5 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role han
    - Write UX feedback to sdd-output/ux-feedback/session-N.md
    - CANNOT edit code — documentation only
 4. Write feedback reports.
-5. Complete role and auto-continue → check `vp-tools graph next` and immediately invoke the next available role (do NOT just display next steps).
+5. Complete role and auto-continue → check `sdd-tools graph next` and immediately invoke the next available role (do NOT just display next steps).
 </process>

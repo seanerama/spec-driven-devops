@@ -133,10 +133,10 @@ function cmdInitRunRole(cwd, roleId, raw) {
  * Context for /sdd:start — checks existing state.
  */
 function cmdInitStart(cwd, raw) {
-  const vpDir = path.join(cwd, 'sdd-output');
+  const sddDir = path.join(cwd, 'sdd-output');
   const statePath = getStatePath(cwd);
   const stateExists = fs.existsSync(statePath);
-  const vpDirExists = fs.existsSync(vpDir);
+  const sddDirExists = fs.existsSync(sddDir);
   const config = loadConfig(cwd);
 
   let resumeInfo = null;
@@ -152,7 +152,7 @@ function cmdInitStart(cwd, raw) {
   }
 
   const result = {
-    vp_dir_exists: vpDirExists,
+    sdd_dir_exists: sddDirExists,
     state_exists: stateExists,
     resume_info: resumeInfo,
     config,
@@ -216,7 +216,7 @@ function cmdInitBuild(cwd, stageNumber, raw) {
     model,
     parallel_stages: config.workflow?.parallel_stages || false,
     branching_strategy: config.git?.branching_strategy || 'stage',
-    branch_template: config.git?.stage_branch_template || 'vp/stage-{stage}-{slug}',
+    branch_template: config.git?.stage_branch_template || 'sdd/stage-{stage}-{slug}',
   };
 
   output(result, raw);

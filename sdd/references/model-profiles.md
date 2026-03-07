@@ -29,11 +29,11 @@ All roles use opus except documentation roles.
 
 ```bash
 # Check current profile
-node vp-tools.cjs config get model_profile
+node sdd-tools.cjs config get model_profile
 
 # Change profile
-node vp-tools.cjs config set model_profile quality
+node sdd-tools.cjs config set model_profile quality
 
 # Override a specific role
-node vp-tools.cjs config set model_overrides.stage-manager opus
+node sdd-tools.cjs config set model_overrides.stage-manager opus
 ```

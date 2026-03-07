@@ -27,7 +27,7 @@ Produces: sdd-output/tests/ documentation
 Role: project-tester
 Arguments: $ARGUMENTS
 
-Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role project-tester`
+Context loaded via: `node "$HOME/.claude/sdd/bin/sdd-tools.cjs" init run-role project-tester`
 </context>
 
 <process>
@@ -43,5 +43,5 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role pro
    - Each step is documented: bug found, fix applied, verification result
    - High-level summary goes to project-state.md
 5. Write test reports and update project-state.md.
-6. Complete role and auto-continue → check `vp-tools graph next` and immediately invoke the next available role (do NOT just display next steps).
+6. Complete role and auto-continue → check `sdd-tools graph next` and immediately invoke the next available role (do NOT just display next steps).
 </process>
