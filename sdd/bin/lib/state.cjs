@@ -144,7 +144,7 @@ function writeStateMd(statePath, content, cwd) {
 // ─── State Path Helper ───────────────────────────────────────────────────────
 
 function getStatePath(cwd) {
-  return path.join(cwd, 'vibration-plan', 'STATE.md');
+  return path.join(cwd, 'sdd-output', 'STATE.md');
 }
 
 // ─── CLI Commands ────────────────────────────────────────────────────────────
@@ -152,7 +152,7 @@ function getStatePath(cwd) {
 function cmdStateLoad(cwd, raw) {
   const { loadConfig } = require('./config.cjs');
   const config = loadConfig(cwd);
-  const vpDir = path.join(cwd, 'vibration-plan');
+  const vpDir = path.join(cwd, 'sdd-output');
 
   let stateRaw = '';
   try {

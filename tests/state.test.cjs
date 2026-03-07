@@ -7,7 +7,7 @@ const { stateExtractField, stateReplaceField, extractFrontmatter, stripFrontmatt
 // ─── Field Extraction ────────────────────────────────────────────────────────
 
 const sampleState = `
-# VibrationPlan State
+# SDD State
 
 ## Workflow
 
@@ -17,7 +17,7 @@ const sampleState = `
 
 ## Completed Roles
 
-- [x] Vision Assistant — vibration-plan/vision-document.md (2026-02-27)
+- [x] Vision Assistant — sdd-output/vision-document.md (2026-02-27)
 - [ ] Lead Architect — project-plan.md, deploy-instruct.md
 - [ ] Project Planner — stage-instructions/
 
@@ -29,7 +29,7 @@ const sampleState = `
 
 | Role | Output | Path | Date |
 |------|--------|------|------|
-| Vision Assistant | vision-document.md | vibration-plan/vision-document.md | 2026-02-27 |
+| Vision Assistant | vision-document.md | sdd-output/vision-document.md | 2026-02-27 |
 
 ## Session Continuity
 
@@ -64,7 +64,7 @@ workflow_path: "new"
 status: "in_progress"
 ---
 
-# VibrationPlan State
+# SDD State
 `;
 
 const fm = extractFrontmatter(withFm);
@@ -79,7 +79,7 @@ assert(Object.keys(noFm).length === 0, 'No frontmatter returns empty object');
 
 const stripped = stripFrontmatter(withFm);
 assert(!stripped.includes('---'), 'stripFrontmatter removes frontmatter delimiters');
-assert(stripped.includes('# VibrationPlan State'), 'stripFrontmatter preserves body');
+assert(stripped.includes('# SDD State'), 'stripFrontmatter preserves body');
 
 const noFmStripped = stripFrontmatter('# No frontmatter');
 assertEqual(noFmStripped, '# No frontmatter', 'stripFrontmatter is no-op without frontmatter');

@@ -1,12 +1,12 @@
 # Start Existing Project Workflow
 
-Initializes vibration-plan/ for an existing project that needs changes.
+Initializes sdd-output/ for an existing project that needs changes.
 
 ## Steps
 
 1. **Create directory structure** (same as new project):
    ```
-   vibration-plan/
+   sdd-output/
    ├── STATE.md
    ├── config.json
    ├── stage-instructions/
@@ -27,7 +27,7 @@ Initializes vibration-plan/ for an existing project that needs changes.
    ```
 
 4. **Update .gitignore**:
-   - Add `vibration-plan/` if not already present
+   - Add `sdd-output/` if not already present
    - Add `.env` if not already present
 
 5. **Auto-invoke first role**:

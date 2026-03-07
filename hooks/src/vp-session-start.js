@@ -21,7 +21,7 @@ process.stdin.on('end', () => {
     const messages = [];
 
     // Check if VP project exists in current directory
-    const statePath = path.join(cwd, 'vibration-plan', 'STATE.md');
+    const statePath = path.join(cwd, 'sdd-output', 'STATE.md');
     if (fs.existsSync(statePath)) {
       const content = fs.readFileSync(statePath, 'utf-8');
 
@@ -36,7 +36,7 @@ process.stdin.on('end', () => {
       const status = extractField('Status') || 'Unknown';
       const stoppedAt = extractField('Stopped At');
 
-      messages.push(`VibrationPlan project detected (${vpPath})`);
+      messages.push(`SDD project detected (${vpPath})`);
       messages.push(`  Phase: ${phase} | Status: ${status}`);
       if (stoppedAt && stoppedAt !== 'Initial setup') {
         messages.push(`  Last stopped at: ${stoppedAt}`);

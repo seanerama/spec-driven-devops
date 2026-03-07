@@ -16,7 +16,7 @@ Run the Feature Manager role: assess a mid-development feature request.
 Determine impact, recommend accept/defer/reject, and if accepted,
 create instructions for implementation.
 
-Produces: vibration-plan/feature-assessments/
+Produces: sdd-output/feature-assessments/
 </objective>
 
 <execution_context>
@@ -39,6 +39,6 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role fea
    - Scope and complexity estimate
    - Recommend: accept (add to current plan), defer (post-v1), or reject (out of scope)
 5. If accepted, create stage instructions for the new feature.
-6. Write assessment to vibration-plan/feature-assessments/.
+6. Write assessment to sdd-output/feature-assessments/.
 7. Complete role and auto-continue → check `vp-tools graph next` and immediately invoke the next available role (do NOT just display next steps).
 </process>

@@ -201,7 +201,7 @@ Each role is assigned a model based on the complexity of its task. Three profile
 | SRE | opus | **sonnet** | haiku |
 | Codebase Mapper | sonnet | **haiku** | haiku |
 
-**Bold** = recommended default (balanced profile). Override per-role in `vibration-plan/config.json`:
+**Bold** = recommended default (balanced profile). Override per-role in `sdd-output/config.json`:
 
 ```json
 {
@@ -218,7 +218,7 @@ Three-tier config resolution (each layer overrides the previous):
 
 1. **Hardcoded defaults** — sensible baseline
 2. **User config** — `~/.sdd/defaults.json` (applies to all projects)
-3. **Project config** — `vibration-plan/config.json` (per-project)
+3. **Project config** — `sdd-output/config.json` (per-project)
 
 ### Key Settings
 
@@ -244,7 +244,7 @@ Three-tier config resolution (each layer overrides the previous):
 
 ## State Tracking
 
-Every project gets a `vibration-plan/STATE.md` with machine-readable fields:
+Every project gets a `sdd-output/STATE.md` with machine-readable fields:
 
 ```markdown
 **Path:** New Project
@@ -280,11 +280,11 @@ The installer automatically converts command formats, tool names, and permission
 ## Project Structure
 
 ```
-vibration-plan-v2/
+spec-driven-devops/
 ├── bin/
 │   └── install.js              # Multi-runtime installer
 ├── commands/
-│   └── vp/                     # 19 slash command files
+│   └── sdd/                    # 19 slash command files
 │       ├── start.md
 │       ├── vision.md
 │       ├── architect.md
@@ -359,7 +359,7 @@ Runs 110 assertions across 4 test suites:
 npx spec-driven-devops --claude --uninstall
 ```
 
-Removes all commands, internals, hooks, and statusline config. Your project's `vibration-plan/` directory is untouched.
+Removes all commands, internals, hooks, and statusline config. Your project's `sdd-output/` directory is untouched.
 
 ## License
 

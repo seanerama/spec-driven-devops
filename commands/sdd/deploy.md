@@ -30,7 +30,7 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role pro
 <process>
 1. Load context — requires project-tester complete.
 2. Mark role active.
-3. Read vibration-plan/deploy-instruct.md for deployment instructions.
+3. Read sdd-output/deploy-instruct.md for deployment instructions.
 4. Execute deployment:
    - Follow deploy-instruct.md step by step
    - Use MCP tools if available (Render, Cloudflare, etc.)

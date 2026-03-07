@@ -14,7 +14,7 @@ allowed-tools:
 Run the UI/UX Designer role: define the visual system, design tokens,
 component patterns, and UX guidelines. Can run in parallel with Lead Architect.
 
-Produces: vibration-plan/design-system.md
+Produces: sdd-output/design-system.md
 </objective>
 
 <execution_context>
@@ -41,6 +41,6 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role ui-
    - Create UX guidelines (interaction patterns, accessibility standards)
    - Define animation and transition patterns
    - Document the design system
-5. Write vibration-plan/design-system.md.
+5. Write sdd-output/design-system.md.
 6. Complete role and auto-continue → check `vp-tools graph next` and immediately invoke the next available role (do NOT just display next steps).
 </process>

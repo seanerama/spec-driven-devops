@@ -14,13 +14,13 @@ function toPosixPath(p) {
 }
 
 /**
- * Walk up from cwd to find a directory containing vibration-plan/.
+ * Walk up from cwd to find a directory containing sdd-output/.
  * Returns the project root or null.
  */
 function resolveProjectRoot(startDir) {
   let dir = startDir || process.cwd();
   while (true) {
-    if (fs.existsSync(path.join(dir, 'vibration-plan'))) return dir;
+    if (fs.existsSync(path.join(dir, 'sdd-output'))) return dir;
     const parent = path.dirname(dir);
     if (parent === dir) return null;
     dir = parent;
@@ -28,10 +28,10 @@ function resolveProjectRoot(startDir) {
 }
 
 /**
- * Get the vibration-plan directory path for a given project root.
+ * Get the sdd-output directory path for a given project root.
  */
 function getVpDir(projectRoot) {
-  return path.join(projectRoot, 'vibration-plan');
+  return path.join(projectRoot, 'sdd-output');
 }
 
 // ─── Model Profile Table ─────────────────────────────────────────────────────

@@ -14,7 +14,7 @@ allowed-tools:
 Run the Security Auditor role: review the codebase for vulnerabilities
 (OWASP Top 10, dependency issues, secrets exposure, auth flaws).
 
-Produces: vibration-plan/security-report.md
+Produces: sdd-output/security-report.md
 </objective>
 
 <execution_context>
@@ -39,6 +39,6 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role sec
    - Check input validation and output encoding
    - Review error handling (no sensitive data in errors)
    - Check CORS, CSP, and security headers
-4. Write vibration-plan/security-report.md with findings and recommendations.
+4. Write sdd-output/security-report.md with findings and recommendations.
 5. Complete role and auto-continue → check `vp-tools graph next` and immediately invoke the next available role (do NOT just display next steps).
 </process>

@@ -1,6 +1,6 @@
 # Run Role Workflow
 
-Generic wrapper for executing any VibrationPlan role. All role commands reference this workflow.
+Generic wrapper for executing any SDD role. All role commands reference this workflow.
 
 ## Pre-Execution
 

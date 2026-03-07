@@ -15,7 +15,7 @@ Run the Retrofit Planner role: analyze an existing codebase, document current st
 and work with the Vision Lead to define planned changes. Replaces Vision Assistant
 and Lead Architect for existing projects.
 
-Produces: vibration-plan/project-plan.md and vibration-plan/project-state.md
+Produces: sdd-output/project-plan.md and sdd-output/project-state.md
 </objective>
 
 <execution_context>

@@ -3,7 +3,7 @@
 /**
  * vp-statusline — Statusline hook for Claude Code
  *
- * Displays current VibrationPlan role and progress in the status bar.
+ * Displays current SDD role and progress in the status bar.
  * Reads STATE.md frontmatter for current role/phase info.
  */
 
@@ -19,7 +19,7 @@ process.stdin.on('end', () => {
   try {
     const data = JSON.parse(input);
     const cwd = data.cwd || process.cwd();
-    const statePath = path.join(cwd, 'vibration-plan', 'STATE.md');
+    const statePath = path.join(cwd, 'sdd-output', 'STATE.md');
 
     if (!fs.existsSync(statePath)) {
       // No VP project — output empty

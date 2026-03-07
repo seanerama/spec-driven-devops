@@ -15,7 +15,7 @@ Run the Handoff Tester role: work with end users to document UX feedback.
 Cannot edit code — documentation only. Routes improvements to Feature Manager,
 bugs to Project Planner → Stage Manager.
 
-Produces: vibration-plan/ux-feedback/ documentation
+Produces: sdd-output/ux-feedback/ documentation
 </objective>
 
 <execution_context>
@@ -39,7 +39,7 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role han
    - Categorize findings:
      - UX improvements → route to /sdd:feature (Feature Manager)
      - Bugs → route to /sdd:plan → /sdd:build (Project Planner → Stage Manager)
-   - Write UX feedback to vibration-plan/ux-feedback/session-N.md
+   - Write UX feedback to sdd-output/ux-feedback/session-N.md
    - CANNOT edit code — documentation only
 4. Write feedback reports.
 5. Complete role and auto-continue → check `vp-tools graph next` and immediately invoke the next available role (do NOT just display next steps).

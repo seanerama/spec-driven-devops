@@ -37,7 +37,7 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role tec
    - Write project README.md (features, installation, usage, API reference)
    - Create docs/api.md if the project exposes an API
    - Create docs/user-guide.md if there are non-technical end users
-   - No framework leakage — don't mention VibrationPlan or internal roles
+   - No framework leakage — don't mention SDD or internal roles
    - User-first writing: show don't tell, code examples, progressive disclosure
 5. Write documentation files.
 6. Complete role and auto-continue → check `vp-tools graph next` and immediately invoke the next available role (do NOT just display next steps).

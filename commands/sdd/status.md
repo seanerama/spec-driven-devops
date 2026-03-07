@@ -1,12 +1,12 @@
 ---
 name: sdd:status
-description: Show current VibrationPlan workflow state and progress
+description: Show current SDD workflow state and progress
 allowed-tools:
   - Read
   - Bash
 ---
 <objective>
-Display the current state of the VibrationPlan workflow: completed roles,
+Display the current state of the SDD workflow: completed roles,
 active roles, available next steps, and overall progress.
 </objective>
 
@@ -22,7 +22,7 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init status`
 
 2. Display a formatted status report:
 
-   ## VibrationPlan Status
+   ## SDD Status
 
    **Workflow**: [New/Existing] Project
    **Progress**: [██████░░░░] X% (Y of Z roles complete)

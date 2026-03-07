@@ -10,7 +10,7 @@ progress:
   percent: 0
 ---
 
-# VibrationPlan State
+# SDD State
 
 ## Workflow
 

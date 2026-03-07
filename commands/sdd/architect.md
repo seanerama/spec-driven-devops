@@ -15,7 +15,7 @@ allowed-tools:
 Run the Lead Architect role: co-design the project's technical architecture,
 tech stack, deployment strategy, and standards with the Vision Lead (user).
 
-Produces: vibration-plan/project-plan.md and vibration-plan/deploy-instruct.md
+Produces: sdd-output/project-plan.md and sdd-output/deploy-instruct.md
 </objective>
 
 <execution_context>
@@ -58,13 +58,13 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role lea
    - Set initial project version
    - Produce project-plan.md and deploy-instruct.md
 
-6. Write outputs to vibration-plan/:
+6. Write outputs to sdd-output/:
    - project-plan.md (comprehensive architecture doc)
    - deploy-instruct.md (deployment instructions for Project Deployer)
 
 7. Complete role:
    ```bash
-   node "$HOME/.claude/sdd/bin/vp-tools.cjs" state complete-role lead-architect --output vibration-plan/project-plan.md --output vibration-plan/deploy-instruct.md
+   node "$HOME/.claude/sdd/bin/vp-tools.cjs" state complete-role lead-architect --output sdd-output/project-plan.md --output sdd-output/deploy-instruct.md
    ```
 
 8. Auto-continue — check `vp-tools graph next` and immediately invoke the next role.

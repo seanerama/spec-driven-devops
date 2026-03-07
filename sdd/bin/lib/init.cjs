@@ -133,7 +133,7 @@ function cmdInitRunRole(cwd, roleId, raw) {
  * Context for /sdd:start — checks existing state.
  */
 function cmdInitStart(cwd, raw) {
-  const vpDir = path.join(cwd, 'vibration-plan');
+  const vpDir = path.join(cwd, 'sdd-output');
   const statePath = getStatePath(cwd);
   const stateExists = fs.existsSync(statePath);
   const vpDirExists = fs.existsSync(vpDir);
@@ -167,7 +167,7 @@ function cmdInitStart(cwd, raw) {
  * Context for /sdd:build — loads stage instructions.
  */
 function cmdInitBuild(cwd, stageNumber, raw) {
-  const stageDir = path.join(cwd, 'vibration-plan', 'stage-instructions');
+  const stageDir = path.join(cwd, 'sdd-output', 'stage-instructions');
   const config = loadConfig(cwd);
   const state = parseStateForGraph(cwd);
 
@@ -199,7 +199,7 @@ function cmdInitBuild(cwd, stageNumber, raw) {
     if (targetStage) {
       targetStage = {
         file: targetStage,
-        path: path.join('vibration-plan/stage-instructions', targetStage),
+        path: path.join('sdd-output/stage-instructions', targetStage),
         content: safeReadFile(path.join(stageDir, targetStage)),
       };
     }

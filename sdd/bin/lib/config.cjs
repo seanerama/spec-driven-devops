@@ -1,7 +1,7 @@
 /**
  * Config — Configuration CRUD operations for spec-driven-devops
  *
- * Three-tier resolution: hardcoded → user (~/.sdd/defaults.json) → project (vibration-plan/config.json)
+ * Three-tier resolution: hardcoded → user (~/.sdd/defaults.json) → project (sdd-output/config.json)
  */
 
 const fs = require('fs');
@@ -41,7 +41,7 @@ function getUserDefaultsPath() {
 }
 
 function getProjectConfigPath(cwd) {
-  return path.join(cwd, 'vibration-plan', 'config.json');
+  return path.join(cwd, 'sdd-output', 'config.json');
 }
 
 function loadUserDefaults() {
@@ -130,15 +130,15 @@ function configSet(obj, keyPath, value) {
 
 function cmdConfigEnsure(cwd, raw) {
   const configPath = getProjectConfigPath(cwd);
-  const vpDir = path.join(cwd, 'vibration-plan');
+  const vpDir = path.join(cwd, 'sdd-output');
 
-  // Ensure vibration-plan directory exists
+  // Ensure sdd-output directory exists
   try {
     if (!fs.existsSync(vpDir)) {
       fs.mkdirSync(vpDir, { recursive: true });
     }
   } catch (err) {
-    error('Failed to create vibration-plan directory: ' + err.message);
+    error('Failed to create sdd-output directory: ' + err.message);
   }
 
   if (fs.existsSync(configPath)) {
@@ -152,7 +152,7 @@ function cmdConfigEnsure(cwd, raw) {
 
   try {
     fs.writeFileSync(configPath, JSON.stringify(defaults, null, 2), 'utf-8');
-    output({ created: true, path: 'vibration-plan/config.json' }, raw, 'created');
+    output({ created: true, path: 'sdd-output/config.json' }, raw, 'created');
   } catch (err) {
     error('Failed to create config.json: ' + err.message);
   }

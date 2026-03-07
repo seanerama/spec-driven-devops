@@ -1,5 +1,5 @@
 /**
- * Graph — Dependency engine for VibrationPlan role orchestration
+ * Graph — Dependency engine for SDD role orchestration
  *
  * Handles: dependency checking, path filtering, OR dependencies,
  * role replacement (retrofit-planner replaces VA+LA), and next-role resolution.

@@ -60,8 +60,8 @@ assert(existingRoles.some(r => r.id === 'codebase-mapper'), 'Codebase mapper ava
 
 const laOutputs = getRoleOutputPaths('lead-architect');
 assert(laOutputs.length === 2, 'LA should have 2 output paths');
-assert(laOutputs.includes('vibration-plan/project-plan.md'), 'LA outputs project-plan.md');
-assert(laOutputs.includes('vibration-plan/deploy-instruct.md'), 'LA outputs deploy-instruct.md');
+assert(laOutputs.includes('sdd-output/project-plan.md'), 'LA outputs project-plan.md');
+assert(laOutputs.includes('sdd-output/deploy-instruct.md'), 'LA outputs deploy-instruct.md');
 
 assertEqual(getRoleOutputPaths('nonexistent'), [], 'Unknown role returns empty outputs');
 

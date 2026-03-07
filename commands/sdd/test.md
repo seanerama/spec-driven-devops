@@ -15,7 +15,7 @@ allowed-tools:
 Run the Project Tester role: test specified pipelines, find and fix bugs,
 document each step of the testing cycle.
 
-Produces: vibration-plan/tests/ documentation
+Produces: sdd-output/tests/ documentation
 </objective>
 
 <execution_context>
@@ -39,7 +39,7 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role pro
    - For each pipeline to test:
      a. Run the test suite
      b. Document results: found bug → describe fix → implement fix → verify → repeat
-     c. Write test report to vibration-plan/tests/pipeline-N-report.md
+     c. Write test report to sdd-output/tests/pipeline-N-report.md
    - Each step is documented: bug found, fix applied, verification result
    - High-level summary goes to project-state.md
 5. Write test reports and update project-state.md.

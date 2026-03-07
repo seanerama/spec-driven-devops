@@ -14,7 +14,7 @@ allowed-tools:
 Run the Vision Assistant role: help the Vision Lead (user) explore, question,
 and shape a rough idea into a clear vision document.
 
-Produces: vibration-plan/vision-document.md
+Produces: sdd-output/vision-document.md
 </objective>
 
 <execution_context>
@@ -54,7 +54,7 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role vis
    - **Phase 4: Shape** — Help crystallize the vision
    - **Phase 5: Document** — Produce vision-document.md
 
-4. Write vision-document.md to vibration-plan/:
+4. Write vision-document.md to sdd-output/:
    ```markdown
    # Vision Document: [Project Name]
    ## The Idea
@@ -69,7 +69,7 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role vis
 
 5. Complete role:
    ```bash
-   node "$HOME/.claude/sdd/bin/vp-tools.cjs" state complete-role vision-assistant --output vibration-plan/vision-document.md
+   node "$HOME/.claude/sdd/bin/vp-tools.cjs" state complete-role vision-assistant --output sdd-output/vision-document.md
    ```
 
 6. Auto-continue — check `vp-tools graph next` and immediately invoke the next role.

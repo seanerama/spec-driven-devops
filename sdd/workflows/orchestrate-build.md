@@ -12,8 +12,8 @@ implementation across one or more stages.
 
 When `/sdd:build <stage-number>` is called:
 
-1. Read `vibration-plan/stage-instructions/stage-{N}-instruct.md`
-2. Read relevant contracts from `vibration-plan/contracts/`
+1. Read `sdd-output/stage-instructions/stage-{N}-instruct.md`
+2. Read relevant contracts from `sdd-output/contracts/`
 3. Read project-plan.md for cross-cutting standards
 4. Read design-system.md if available
 

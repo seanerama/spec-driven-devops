@@ -1,12 +1,12 @@
 # Start New Project Workflow
 
-Initializes vibration-plan/ for a brand new project.
+Initializes sdd-output/ for a brand new project.
 
 ## Steps
 
 1. **Create directory structure**:
    ```
-   vibration-plan/
+   sdd-output/
    ├── STATE.md
    ├── config.json
    ├── stage-instructions/
@@ -27,7 +27,7 @@ Initializes vibration-plan/ for a brand new project.
    ```
 
 4. **Update .gitignore**:
-   - Add `vibration-plan/` if not already present
+   - Add `sdd-output/` if not already present
    - Add `.env` if not already present
 
 5. **Initialize git** (if not already a repo):

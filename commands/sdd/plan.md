@@ -14,7 +14,7 @@ allowed-tools:
 Run the Project Planner role: break the project plan into implementable stages
 with interface contracts between them.
 
-Produces: vibration-plan/stage-instructions/ and vibration-plan/contracts/
+Produces: sdd-output/stage-instructions/ and sdd-output/contracts/
 </objective>
 
 <execution_context>
@@ -45,7 +45,7 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init run-role pro
      - Testing requirements
      - Pipeline test specification (YES/NO)
      - Acceptance criteria
-   - Produce interface contracts in vibration-plan/contracts/
+   - Produce interface contracts in sdd-output/contracts/
 5. Write all stage instructions and contracts.
 6. Complete role and auto-continue → immediately invoke `/sdd:build` (do NOT just display next steps)
 </process>

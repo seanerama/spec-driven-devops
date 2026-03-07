@@ -23,7 +23,7 @@
  *   graph available                    All roles available to run now
  *   graph path <new|existing>          Show workflow sequence for path
  *
- *   config ensure                      Initialize vibration-plan/config.json
+ *   config ensure                      Initialize sdd-output/config.json
  *   config get <key.path>              Get config value
  *   config set <key.path> <value>      Set config value
  *

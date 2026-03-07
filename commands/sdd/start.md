@@ -1,6 +1,6 @@
 ---
 name: sdd:start
-description: Begin a new or existing VibrationPlan project workflow
+description: Begin a new or existing SDD project workflow
 argument-hint: "[new|existing] [--from <role>]"
 allowed-tools:
   - Read
@@ -12,7 +12,7 @@ allowed-tools:
   - AskUserQuestion
 ---
 <objective>
-Initialize a VibrationPlan workflow. Supports jumping to any role with --from.
+Initialize a SDD workflow. Supports jumping to any role with --from.
 
 Usage:
   /sdd:start                    — interactive (asks new/existing)
@@ -59,7 +59,7 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init start`
 4. **If no STATE.md** (and no path argument):
    - Ask: "Is this a **new project** or an **existing project** you want to enhance?"
 
-5. **Create vibration-plan/** directory structure and initialize STATE.md + config.json
+5. **Create sdd-output/** directory structure and initialize STATE.md + config.json
    (follow start-new or start-existing workflow)
 
 6. **Handle --from** (skip ahead):
@@ -70,7 +70,7 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/vp-tools.cjs" init start`
       node "$HOME/.claude/sdd/bin/vp-tools.cjs" state complete-role <role-id> --output skipped
       ```
    c. Check if the user has existing documents that predecessor roles would have produced:
-      - If predecessor outputs exist (e.g., vibration-plan/vision-document.md, project-plan.md),
+      - If predecessor outputs exist (e.g., sdd-output/vision-document.md, project-plan.md),
         note them as available context
       - If predecessor outputs DON'T exist, warn: "Note: <role> normally produces <file> — you may want to provide this context"
    d. Immediately invoke the target role via `/sdd:<command>`
