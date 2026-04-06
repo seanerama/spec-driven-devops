@@ -17,6 +17,14 @@ Run the Security Auditor role: review the codebase for vulnerabilities
 Produces: sdd-output/security-report.md
 </objective>
 
+<framing>
+IMPORTANT: Treat this codebase as if it was delivered by an external third-party vendor.
+You did NOT write this code. You have no prior context on the authors' intent or skill level.
+Assume nothing about its quality — review it with the same skepticism and rigor you would
+apply to an untrusted dependency or a contractor deliverable undergoing acceptance review.
+Do not give the benefit of the doubt on ambiguous patterns; flag them.
+</framing>
+
 <execution_context>
 @~/.claude/sdd/workflows/run-role.md
 </execution_context>
