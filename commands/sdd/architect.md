@@ -52,7 +52,7 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/sdd-tools.cjs" init run-role le
    - Choose tech stack
    - Identify core features and scope
    - Establish project structure
-   - Define cross-cutting standards (logging, error handling, auth, code style)
+   - Define cross-cutting standards (logging, error handling, auth, code style, dependency management — always pin versions and commit lockfiles)
    - Define deployment strategy
    - Define secrets management (.env by default)
    - Set initial project version

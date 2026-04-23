@@ -42,6 +42,9 @@ Context loaded via: `node "$HOME/.claude/sdd/bin/sdd-tools.cjs" init run-role se
 3. Execute Security Auditor workflow:
    - Review code for OWASP Top 10 vulnerabilities
    - Check dependency versions for known CVEs
+   - **Flag any unpinned dependencies** (ranges like `^`, `~`, `*`, `latest`, or missing
+     lockfiles). Unpinned deps are a supply-chain risk — report them as findings even
+     if no current CVE exists.
    - Scan for exposed secrets, hardcoded credentials
    - Review auth/authz implementation
    - Check input validation and output encoding

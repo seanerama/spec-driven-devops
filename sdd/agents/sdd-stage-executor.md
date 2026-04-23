@@ -36,3 +36,8 @@ instruction file you've been given.
 - Follow interface contracts exactly — other stages depend on them
 - Write tests for everything you build
 - Do not modify files owned by other stages unless the contract allows it
+- **Pin all dependencies to exact versions.** No `^`, `~`, `*`, `latest`, or unbounded ranges
+  in package.json / requirements.txt / go.mod / Cargo.toml / etc. Commit the lockfile
+  (package-lock.json, yarn.lock, pnpm-lock.yaml, poetry.lock, requirements.txt with hashes,
+  go.sum, Cargo.lock) alongside the manifest. Unpinned deps cause non-reproducible builds
+  and silent supply-chain drift.

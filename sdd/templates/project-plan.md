@@ -64,6 +64,12 @@
 ### Testing
 [Test framework, coverage requirements, test patterns]
 
+### Dependency Management
+All dependencies MUST be pinned to exact versions (no `^`, `~`, `*`, `latest`, or ranges).
+Lockfiles (package-lock.json, yarn.lock, pnpm-lock.yaml, poetry.lock, go.sum, Cargo.lock,
+etc.) MUST be committed alongside the manifest. Rationale: reproducible builds, protection
+against silent supply-chain drift, and deterministic CI/CD.
+
 ## Deployment Strategy
 
 [Where and how to deploy — details in deploy-instruct.md]
